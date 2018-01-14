@@ -10,9 +10,8 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import WelcomePage from '../WelcomePage/WelcomePage';
-
-// import components
-import NavBar from '../../components/NavBar/NavBar';
+import MovieIndexPage from '../MovieIndexPage/MovieIndexPage';
+import MovieShowPage from '../MovieShowPage/MovieShowPage';
 
 // import utilities
 import userService from '../../utilities/userService';
@@ -43,16 +42,24 @@ class App extends Component {
       <div>
         <Router>
           <div>
-            <div>
-              <NavBar
-                user={this.state.user}
-                handleLogout={this.handleLogout}
-              />
-            </div>
             <Switch>
               <Route exact path='/' render={(props) =>
                 <WelcomePage
                   {...props}
+                />
+              }/>
+              <Route exact path='/movies' render={(props) =>
+                <MovieIndexPage
+                  {...props}
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
+                />
+              }/>
+              <Route exact path='/movies/:id' render={(props) =>
+                <MovieShowPage
+                  {...props}
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
                 />
               }/>
               <Route exact path='/signup' render={(props) => 

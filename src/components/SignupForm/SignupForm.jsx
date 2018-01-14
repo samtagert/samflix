@@ -25,7 +25,7 @@ class SignupForm extends Component {
     userService.signup(this.state)
       .then(() => {
         this.props.handleSignup();
-        this.props.history.push('/')
+        this.props.history.push('/movies')
       }) 
       .catch(err => this.props.updateMessage(err.message));
   }
