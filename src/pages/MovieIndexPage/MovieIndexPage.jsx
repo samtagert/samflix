@@ -21,7 +21,6 @@ class MovieIndexPage extends Component {
           handleLogout={this.props.handleLogout}
         />
         <MovieCarousel {...props}/>
-        <h1>Movie Index</h1>
         <MovieCard />
       </div>
   )}
