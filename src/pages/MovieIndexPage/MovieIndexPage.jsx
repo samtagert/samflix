@@ -11,7 +11,7 @@ class MovieIndexPage extends Component {
       movies: null,
     };
   }
-
+  
   render(props) {
     return (
       <div>
@@ -20,7 +20,7 @@ class MovieIndexPage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieCarousel />
+        <MovieCarousel {...props}/>
         <h1>Movie Index</h1>
         <MovieCard />
       </div>

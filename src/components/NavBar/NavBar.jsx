@@ -1,35 +1,44 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { Navbar, NavItem, Nav } from 'react-bootstrap'
 import './NavBar.css';
 
 const NavBar = (props) => {
   let nav = props.user ?
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <Link to='/movies' className='navbar-brand'>SAMFLIX</Link>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <Link to='/profile' class="nav-link">Welcome, {props.user.name}!</Link>
-      </li>
-      <li class="nav-item">
-        <Link to='' class="nav-link" onClick={props.handleLogout}>Log Out</Link>
-      </li>
-    </ul>
-  </nav>
+  <Navbar>
+    <Navbar.Header>
+			<Navbar.Brand>
+        <Link to='/movies'>SAMFLIX</Link>
+			</Navbar.Brand>
+		</Navbar.Header>
+    <Nav>
+      <NavItem>
+        <Link to='/profile'>Welcome, {props.user.name}!</Link>
+      </NavItem>
+      <NavItem>
+        <Link to='' onClick={props.handleLogout}>Log Out</Link>
+      </NavItem>
+    </Nav>
+  </Navbar>
   :
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <Link to='/movies' className='navbar-brand'>SAMFLIX</Link>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <Link to='/login' class="nav-link">Log In</Link>
-      </li>
-      <li class="nav-item">
-        <Link to='signup' class="nav-link">Sign Up</Link>
-      </li>
-    </ul>
-  </nav>;
+  <Navbar>
+    <Navbar.Header>
+			<Navbar.Brand>
+        <Link to='/movies'>SAMFLIX</Link>
+			</Navbar.Brand>
+		</Navbar.Header>
+    <Nav>
+      <NavItem>
+        <Link to='/login'>Log In</Link>      
+      </NavItem>
+      <NavItem>
+        <Link to='signup'>Sign Up</Link>      
+      </NavItem>
+    </Nav>
+  </Navbar>;
   
   return (
-    <div className='NavBar'>
+    <div>
       {nav}
     </div>
   );
