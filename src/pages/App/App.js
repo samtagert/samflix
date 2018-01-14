@@ -11,6 +11,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import MovieIndexPage from '../MovieIndexPage/MovieIndexPage';
+import MovieGenrePage from '../MovieGenrePage/MovieGenrePage';
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
@@ -40,7 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Router>
           <div>
             <Switch>
@@ -57,6 +58,13 @@ class App extends Component {
                 />
               }/>
               <Route exact path='/movies/:id' render={(props) =>
+                <MovieGenrePage
+                  {...props}
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
+                />
+              }/>
+              <Route exact path='/movie/:id' render={(props) =>
                 <MovieShowPage
                   {...props}
                   user={this.state.user}

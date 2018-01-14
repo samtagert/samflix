@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './MovieShowPage.css';
+import './MovieGenrePage.css';
 import NavBar from '../../components/NavBar/NavBar';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import MovieJumbotron from '../../components/MovieJumbotron/MovieJumbotron';
 
-class MovieShowPage extends Component {
+class MovieGenrePage extends Component {
   constructor(props){
     super();
     this.state = {
-      movie: null,
+      movies: null,
     };
   }
-
+  
   render(props) {
     return (
       <div>
@@ -20,11 +21,14 @@ class MovieShowPage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron {...props} />
-        <h1>Movie Show</h1>
+        <MovieJumbotron {...props}/>
+        <h1>Movie Genre</h1>
+        <MovieCard
+          // genre={props.movies.action}
+        />
         <p><Link to='/movies'>Back to the index</Link></p>
       </div>
   )}
 }
 
-export default MovieShowPage;
+export default MovieGenrePage;
