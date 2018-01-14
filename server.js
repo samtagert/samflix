@@ -15,13 +15,17 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(require('./config/auth'))
 
-app.use('/', require('./routes/games'));
+// app.use('/', require('./routes/movies'));
 app.use('/api/users', require('./routes/api/users'));
 
+// The following "catch all" route is necessary for
+// a SPA'sclient-side routing to properly work
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+// Configure to use port 3001 instead of 3000 during
+// development to avoid collision with React's dev server
 var port = process.env.PORT || 3001;
 
 app.listen(port, function() {
