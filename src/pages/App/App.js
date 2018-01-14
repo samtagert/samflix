@@ -12,6 +12,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import MovieIndexPage from '../MovieIndexPage/MovieIndexPage';
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 // import utilities
 import userService from '../../utilities/userService';
@@ -57,6 +58,13 @@ class App extends Component {
               }/>
               <Route exact path='/movies/:id' render={(props) =>
                 <MovieShowPage
+                  {...props}
+                  user={this.state.user}
+                  handleLogout={this.handleLogout}
+                />
+              }/>
+              <Route exact path='/profile' render={(props) =>
+                <ProfilePage
                   {...props}
                   user={this.state.user}
                   handleLogout={this.handleLogout}
