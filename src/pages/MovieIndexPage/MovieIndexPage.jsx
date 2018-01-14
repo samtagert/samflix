@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './MovieIndexPage.css';
 import NavBar from '../../components/NavBar/NavBar';
+import MovieCard from '../../components/MovieCard/MovieCard';
 
 class MovieIndexPage extends Component {
   constructor(props){
@@ -19,6 +20,7 @@ class MovieIndexPage extends Component {
           handleLogout={this.props.handleLogout}
         />
         <h1>Movie Index</h1>
+        <MovieCard />
       </div>
   )}
 }
