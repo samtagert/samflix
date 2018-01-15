@@ -15,7 +15,8 @@ class MovieIndexPage extends Component {
       animationMovies: null,
       comedyMovies: null,
       crimeMovies: null,
-      fantasyMovies: null
+      fantasyMovies: null,
+      popularMovies: null
     };
   }
   
@@ -48,6 +49,11 @@ class MovieIndexPage extends Component {
     tmdbAPI.fetchFantasy()
     .then(fantasyMovies => this.setState({fantasyMovies}))
   }
+
+  popular = () => {
+    tmdbAPI.fetchPopular()
+    .then(popularMovies => this.setState({popularMovies}))
+  }
   
   componentDidMount() {
     this.action()
@@ -56,41 +62,56 @@ class MovieIndexPage extends Component {
     this.comedy()
     this.crime()
     this.fantasy()
+    this.popular()
   }
   
   render(props) {
     return (
-      <div>
+      <div className="index-page">
         <NavBar
           {...props}
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieCarousel {...props}/>
-        <h4><Link to="/movies/action">Action</Link></h4>
+        <MovieCarousel
+          movies={this.state.popularMovies}
+        />
+        <div className="card-group">
+        <h1 className="header"><Link className="title" to="/movies/genre/28">Action</Link></h1>
         <MovieCard
           movies={this.state.actionMovies}
         />
-        <h4><Link to="/movies/sciencefiction">Science Fiction</Link></h4>
+        </div>
+        <div className="card-group">        
+        <h1 className="header"><Link className="title" to="/movies/genre/878">Sci-Fi</Link></h1>
         <MovieCard
           movies={this.state.scienceFictionMovies}        
         />
-        <h4><Link to="/movies/animation">Animation</Link></h4>
+        </div>        
+        <div className="card-group">        
+        <h1 className="header"><Link className="title" to="/movies/genre/16">Animation</Link></h1>
         <MovieCard
           movies={this.state.animationMovies}        
         />
-        <h4><Link to="/movies/comedy">Comedy</Link></h4>
+        </div>        
+        <div className="card-group">        
+        <h1 className="header"><Link className="title" to="/movies/genre/35">Comedy</Link></h1>
         <MovieCard
           movies={this.state.comedyMovies}        
         />
-        <h4><Link to="/movies/crime">Crime</Link></h4>
+        </div>        
+        <div className="card-group">        
+        <h1 className="header"><Link className="title" to="/movies/genre/80">Crime</Link></h1>
         <MovieCard
           movies={this.state.crimeMovies}        
         />
-        <h4><Link to="/movies/fantasy">Fantasy</Link></h4>
+        </div>        
+        <div className="card-group">        
+        <h1 className="header"><Link className="title" to="/movies/genre/14">Fantasy</Link></h1>
         <MovieCard
           movies={this.state.fantasyMovies}        
         />
+        </div>        
       </div>
   )}
 }

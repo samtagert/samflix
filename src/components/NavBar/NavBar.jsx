@@ -16,6 +16,9 @@ const NavBar = (props) => {
         <Link to='/profile'>Welcome, {props.user.name}!</Link>
       </NavItem>
       <NavItem>
+        <Link to='/movies'>Dropdown with genres</Link>
+      </NavItem>
+      <NavItem>
         <Link to='' onClick={props.handleLogout}>Log Out</Link>
       </NavItem>
     </Nav>

@@ -4,15 +4,27 @@ import './MovieGenrePage.css';
 import NavBar from '../../components/NavBar/NavBar';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import MovieJumbotron from '../../components/MovieJumbotron/MovieJumbotron';
+import tmdbAPI from '../../utilities/tmdbAPI'
 
 class MovieGenrePage extends Component {
-  constructor(props){
+  constructor(props) {
     super();
     this.state = {
-      movies: null,
+      genre: null,
+      movies: null
     };
   }
   
+  genre = () => {
+    //pass in the this.props.match.params.id
+    tmdbAPI.fetchGenre()
+    .then(movies => this.setState({movies}))
+  }
+
+  componentDidMount() {
+    this.genre()
+  }
+
   render(props) {
     return (
       <div>
@@ -21,8 +33,7 @@ class MovieGenrePage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron {...props}/>
-        <h1>Movie Genre</h1>
+        <MovieJumbotron title={this.state.genre}/>
         <h2>Sort by... component</h2>
         <MovieCard
           // genre={props.movies.action}

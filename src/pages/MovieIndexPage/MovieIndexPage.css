@@ -1,0 +1,26 @@
+.index-page {
+  width: 90%;
+  margin: auto;
+}
+
+.card-group {
+  text-align: center;
+}
+
+.header {
+  text-align: left;
+  margin: 0 58px;
+}
+
+.title {
+  font-size: 32px;
+  color: rgb(196, 196, 196);
+  transition: 500ms;
+}
+
+.title:hover {
+  color: #FFF;
+  font-size: 33px;
+  text-decoration: none;
+  transition: 500ms;
+}

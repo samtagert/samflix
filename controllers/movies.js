@@ -51,11 +51,29 @@ function fetchFantasy (req, res) {
   })
 }
 
+function fetchGenre (req, res) {
+  request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&with_genres=14`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies = tmbdBody.results;
+    res.json(movies)
+  })
+}
+
+function fetchPopular (req, res) {
+  request(`https://api.themoviedb.org/3/movie/popular?api_key=${tmbdKey}&language=en-US&include_adult=false`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies = tmbdBody.results;
+    res.json(movies);
+  })
+}
+
 module.exports = {
   fetchAction,
   fetchScienceFiction,
   fetchAnimation,
   fetchComedy,
   fetchCrime,
-  fetchFantasy
+  fetchFantasy,
+  fetchGenre,
+  fetchPopular
 }

@@ -1,9 +1,10 @@
 .movie-card {
-  width: 10%;
-  margin-bottom: 5px;
+  width: 13%;
+  margin: 5px 0 40px;
+  transition: 500ms;
 }
 
 .movie-card:hover {
-  border: 1px solid rgba(0, 0, 0, 0);
-  transition: 300ms;
+  width: 22%;
+  transition: 500ms;
 }

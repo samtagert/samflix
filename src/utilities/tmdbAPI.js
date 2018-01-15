@@ -40,11 +40,27 @@ function fetchFantasy() {
   )
 }
 
+function fetchGenre() {
+  return (
+    fetch('/api/movies/genre')
+    .then(res => res.json())
+  )
+}
+
+function fetchPopular() {
+  return (
+    fetch('api/movies/popular')
+    .then(res => res.json())
+  )
+}
+
 export default {
   fetchAction,
   fetchScienceFiction,
   fetchAnimation,
   fetchComedy,
   fetchCrime,
-  fetchFantasy
+  fetchFantasy,
+  fetchGenre,
+  fetchPopular
 };

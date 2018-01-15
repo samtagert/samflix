@@ -57,7 +57,7 @@ class App extends Component {
                   handleLogout={this.handleLogout}
                 />
               }/>
-              <Route exact path='/movies/:id' render={(props) =>
+              <Route exact path='/movies/genre/:id' render={(props) =>
                 <MovieGenrePage
                   {...props}
                   user={this.state.user}

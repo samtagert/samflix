@@ -20,7 +20,7 @@ class MovieShowPage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron {...props} />
+        <MovieJumbotron title={'banana'} />
         <h1>Movie Show</h1>
         <p><Link to='/movies'>Back to the index</Link></p>
       </div>
