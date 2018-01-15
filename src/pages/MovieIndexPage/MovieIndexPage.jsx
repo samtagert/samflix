@@ -69,27 +69,27 @@ class MovieIndexPage extends Component {
         <MovieCarousel {...props}/>
         <h4><Link to="/movies/action">Action</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.actionMovies}
         />
         <h4><Link to="/movies/sciencefiction">Science Fiction</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.scienceFictionMovies}        
         />
         <h4><Link to="/movies/animation">Animation</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.animationMovies}        
         />
         <h4><Link to="/movies/comedy">Comedy</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.comedyMovies}        
         />
         <h4><Link to="/movies/crime">Crime</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.crimeMovies}        
         />
         <h4><Link to="/movies/fantasy">Fantasy</Link></h4>
         <MovieCard
-          // genre={props.movies.action}
+          movies={this.state.fantasyMovies}        
         />
       </div>
   )}

@@ -5,17 +5,12 @@ import './MovieCard.css';
 
 const MovieCard = (props) => (
   <div>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
-    <Link to="/movie/test"><img className="movie-card" src="https://images-na.ssl-images-amazon.com/images/I/71OebfTPCiL._SX466_.jpg" /></Link>
+    {props.movies ?
+    props.movies.map(movie => 
+    <Link to={`/movie/${movie.id}`}><img className="movie-card" src={`https://image.tmdb.org/t/p/w154/${movie.poster_path}`} alt="Movie Poster"/></Link>)
+    :
+    <p>loading</p>}
   </div>
 )
 
-export default MovieCard; 
+export default MovieCard;

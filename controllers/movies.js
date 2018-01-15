@@ -1,6 +1,8 @@
 var request = require('request-promise-native');
 var tmbdKey = process.env.TMBD_KEY; 
 
+// create 1 more request for each with page=2 for more results on the genre page
+
 function fetchAction (req, res) {
   request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&with_genres=28`,function (error, tmbdResponse) {
     var tmbdBody = JSON.parse(tmbdResponse.body)
