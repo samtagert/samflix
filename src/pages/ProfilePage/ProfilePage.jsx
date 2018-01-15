@@ -20,6 +20,7 @@ class ProfilePage extends Component {
           handleLogout={this.props.handleLogout}
         />
         <h1>Profile Page</h1>
+        <h2>Watchlist... different card component that's bigger with more information</h2>
         <p><Link to='/movies'>Back to the index</Link></p>
       </div>
   )}

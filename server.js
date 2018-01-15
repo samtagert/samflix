@@ -15,7 +15,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(require('./config/auth'))
 
-// app.use('/', require('./routes/movies'));
+app.use('/api/movies', require('./routes/api/movies'));
 app.use('/api/users', require('./routes/api/users'));
 
 // The following "catch all" route is necessary for

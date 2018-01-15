@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 import {Jumbotron} from 'react-bootstrap'
 import './MovieJumbotron.css';
 
-// try to make jumbotron work for show page and genre, in the h1 would be props.name and hopefully
-// i can pass down either genre or movie and it have the same .name
+// try to make jumbotron work for show page and genre, pass down the same prop name in the 
+// genre page and show page
 
 const MovieJumbotron = (props) => (
   <div>

@@ -4,6 +4,7 @@ import './MovieIndexPage.css';
 import NavBar from '../../components/NavBar/NavBar';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import MovieCarousel from '../../components/MovieCarousel/MovieCarousel';
+import tmdbAPI from '../../utilities/tmdbAPI'
 
 class MovieIndexPage extends Component {
   constructor(props){
@@ -11,6 +12,15 @@ class MovieIndexPage extends Component {
     this.state = {
       movies: null,
     };
+  }
+  
+  topRated = () => {
+    tmdbAPI.fetchTopRated()
+    .then(movies => this.setState({movies}))
+  }
+  
+  componentDidMount() {
+    this.topRated()
   }
   
   render(props) {

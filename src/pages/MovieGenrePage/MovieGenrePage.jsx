@@ -23,6 +23,7 @@ class MovieGenrePage extends Component {
         />
         <MovieJumbotron {...props}/>
         <h1>Movie Genre</h1>
+        <h2>Sort by... component</h2>
         <MovieCard
           // genre={props.movies.action}
         />
