@@ -10,17 +10,52 @@ class MovieIndexPage extends Component {
   constructor(props){
     super();
     this.state = {
-      movies: null,
+      actionMovies: null,
+      scienceFictionMovies: null,
+      animationMovies: null,
+      comedyMovies: null,
+      crimeMovies: null,
+      fantasyMovies: null
     };
   }
   
-  topRated = () => {
-    tmdbAPI.fetchTopRated()
-    .then(movies => this.setState({movies}))
+  action = () => {
+    tmdbAPI.fetchAction()
+    .then(actionMovies => this.setState({actionMovies}))
+  }
+
+  scienceFiction = () => {
+    tmdbAPI.fetchScienceFiction()
+    .then(scienceFictionMovies => this.setState({scienceFictionMovies}))
+  }
+
+  animation = () => {
+    tmdbAPI.fetchAnimation()
+    .then(animationMovies => this.setState({animationMovies}))
+  }
+
+  comedy = () => {
+    tmdbAPI.fetchComedy()
+    .then(comedyMovies => this.setState({comedyMovies}))
+  }
+
+  crime = () => {
+    tmdbAPI.fetchCrime()
+    .then(crimeMovies => this.setState({crimeMovies}))
+  }
+
+  fantasy = () => {
+    tmdbAPI.fetchFantasy()
+    .then(fantasyMovies => this.setState({fantasyMovies}))
   }
   
   componentDidMount() {
-    this.topRated()
+    this.action()
+    this.scienceFiction()
+    this.animation()
+    this.comedy()
+    this.crime()
+    this.fantasy()
   }
   
   render(props) {
@@ -32,27 +67,27 @@ class MovieIndexPage extends Component {
           handleLogout={this.props.handleLogout}
         />
         <MovieCarousel {...props}/>
-        <h4><Link to="/movies/genre">Action</Link></h4>
+        <h4><Link to="/movies/action">Action</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
-        <h4><Link to="/movies/genre">Drama</Link></h4>
+        <h4><Link to="/movies/sciencefiction">Science Fiction</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
-        <h4><Link to="/movies/genre">Comedy</Link></h4>
+        <h4><Link to="/movies/animation">Animation</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
-        <h4><Link to="/movies/genre">Horror</Link></h4>
+        <h4><Link to="/movies/comedy">Comedy</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
-        <h4><Link to="/movies/genre">Sci-fi</Link></h4>
+        <h4><Link to="/movies/crime">Crime</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
-        <h4><Link to="/movies/genre">Fantasy</Link></h4>
+        <h4><Link to="/movies/fantasy">Fantasy</Link></h4>
         <MovieCard
           // genre={props.movies.action}
         />
