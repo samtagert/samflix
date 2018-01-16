@@ -18,7 +18,7 @@ class MovieGenrePage extends Component {
   genre = () => {
     //pass in the this.props.match.params.id
     tmdbAPI.fetchGenre()
-    .then(movies => this.setState({movies}))
+    .then(genre => this.setState({genre}))
   }
 
   componentDidMount() {
@@ -33,10 +33,12 @@ class MovieGenrePage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron title={this.state.genre}/>
-        <h2>Sort by... component</h2>
+        <MovieJumbotron title={this.props.genre}/>
         <MovieCard
-          // genre={props.movies.action}
+          // movies={this.props.movies}
+        />
+        <MovieCard
+          // movies={this.state.movies}
         />
         <p><Link to='/movies'>Back to the index</Link></p>
       </div>

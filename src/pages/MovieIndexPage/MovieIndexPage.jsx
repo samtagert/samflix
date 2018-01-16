@@ -77,7 +77,7 @@ class MovieIndexPage extends Component {
           movies={this.state.popularMovies}
         />
         <div className="card-group">
-        <h1 className="header"><Link className="title" to="/movies/genre/28">Action</Link></h1>
+        <h1 className="header"><Link className="title" to="/movies/genre/28" genre="Action">Action</Link></h1>
         <MovieCard
           movies={this.state.actionMovies}
         />

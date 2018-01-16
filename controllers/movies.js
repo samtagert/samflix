@@ -52,15 +52,25 @@ function fetchFantasy (req, res) {
 }
 
 function fetchGenre (req, res) {
-  request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&with_genres=14`,function (error, tmbdResponse) {
+  request(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${tmbdKey}`,function (error, tmbdResponse) {
     var tmbdBody = JSON.parse(tmbdResponse.body)
-    var movies = tmbdBody.results;
-    res.json(movies)
+    var genres = tmbdBody.genres;
+    // var genre = genres.find(id=req.id)
+    // console.log('FETCH GENRE RESULTS', genre)
+    res.json(genres)
   })
 }
 
 function fetchPopular (req, res) {
   request(`https://api.themoviedb.org/3/movie/popular?api_key=${tmbdKey}&language=en-US&include_adult=false`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies = tmbdBody.results;
+    res.json(movies);
+  })
+}
+
+function fetchMovie (req, res) {
+  request(`https://api.themoviedb.org/3/movie/${req.id}?api_key=${tmbdKey}&language=en-US`,function (error, tmbdResponse) {
     var tmbdBody = JSON.parse(tmbdResponse.body)
     var movies = tmbdBody.results;
     res.json(movies);
@@ -75,5 +85,6 @@ module.exports = {
   fetchCrime,
   fetchFantasy,
   fetchGenre,
-  fetchPopular
+  fetchPopular,
+  fetchMovie
 }

@@ -10,10 +10,8 @@ const MovieJumbotron = (props) => (
   <div>
     <Jumbotron>
       <h1>{props.title}</h1>
-      <p>
-        This is a simple hero unit, a simple jumbotron-style component for calling
-        extra attention to featured content or information.
-      </p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia, ducimus dignissimos facilis nulla quasi illo. Sapiente iusto, impedit facere accusamus ut non culpa error aspernatur maiores quibusdam incidunt asperiores cum?</p>
+      {/* <p>{props.summary}</p> */}
     </Jumbotron>
   </div>
 )
