@@ -31,17 +31,20 @@ class MovieShowPage extends Component {
           handleLogout={this.props.handleLogout}
         />
         {this.state.movie ?
-        <div>
-          <MovieJumbotron
-            title={this.state.movie.title}
-          />
-          <p className="movie-info">Released: {this.state.movie.release_date} | Runtime: {this.state.movie.runtime} minutes | Average Rating: {this.state.movie.vote_average}/10</p>
-          <h2 className="summary-header">Summary:</h2>
-          <p className="movie-summary">{this.state.movie.overview}</p>
-        </div>
-        : <div></div>}
+          <div>
+            <MovieJumbotron
+              title={this.state.movie.title}
+            />
+            <p className="movie-info">Released: {this.state.movie.release_date} | Runtime: {this.state.movie.runtime} minutes | Average Rating: {this.state.movie.vote_average}/10</p>
+            <h2 className="summary-header">Summary:</h2>
+            <p className="movie-summary">{this.state.movie.overview}</p>
+          </div>
+          :
+          <div></div>
+        }
       </div>
-  )}
+    )
+  }
 }
 
 export default MovieShowPage;

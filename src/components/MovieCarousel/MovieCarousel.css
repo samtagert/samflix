@@ -9,14 +9,14 @@
 }
 
 .carousel-title {
-  font-size: 42px;
+  font-size: 40px;
   color: rgb(196, 196, 196);
   transition: 500ms;  
 }
 
 .carousel-title:hover {
   color: #FFF;
-  font-size: 43px;
+  font-size: 41px;
   text-decoration: none;
   transition: 500ms;
 }

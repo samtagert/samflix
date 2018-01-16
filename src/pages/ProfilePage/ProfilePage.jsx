@@ -19,11 +19,13 @@ class ProfilePage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <h1>Profile Page</h1>
-        <h2>Watchlist... different card component that's bigger with more information</h2>
-        <p><Link to='/movies'>Back to the index</Link></p>
+        <div className="profile">
+          <h1>Profile Page</h1>
+          <p>Work in progress. Plans are to enable a watch list for each user.</p>
+        </div>
       </div>
-  )}
+    )
+  }
 }
 
 export default ProfilePage;

@@ -77,43 +77,44 @@ class MovieIndexPage extends Component {
           movies={this.state.popularMovies}
         />
         <div className="card-group">
-        <h1 className="header"><Link className="title" to="/movies/genre/28" genre="Action">Action</Link></h1>
-        <MovieCard
-          movies={this.state.actionMovies}
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/28" genre="Action">Action</Link></h1>
+          <MovieCard
+            movies={this.state.actionMovies}
+          />
         </div>
         <div className="card-group">        
-        <h1 className="header"><Link className="title" to="/movies/genre/878">Sci-Fi</Link></h1>
-        <MovieCard
-          movies={this.state.scienceFictionMovies}        
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/878">Sci-Fi</Link></h1>
+          <MovieCard
+            movies={this.state.scienceFictionMovies}        
+          />
         </div>        
         <div className="card-group">        
-        <h1 className="header"><Link className="title" to="/movies/genre/16">Animation</Link></h1>
-        <MovieCard
-          movies={this.state.animationMovies}        
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/16">Animation</Link></h1>
+          <MovieCard
+            movies={this.state.animationMovies}        
+          />
         </div>        
         <div className="card-group">        
-        <h1 className="header"><Link className="title" to="/movies/genre/35">Comedy</Link></h1>
-        <MovieCard
-          movies={this.state.comedyMovies}        
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/35">Comedy</Link></h1>
+          <MovieCard
+            movies={this.state.comedyMovies}        
+          />
         </div>        
         <div className="card-group">        
-        <h1 className="header"><Link className="title" to="/movies/genre/80">Crime</Link></h1>
-        <MovieCard
-          movies={this.state.crimeMovies}        
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/80">Crime</Link></h1>
+          <MovieCard
+            movies={this.state.crimeMovies}        
+          />
         </div>        
         <div className="card-group">        
-        <h1 className="header"><Link className="title" to="/movies/genre/14">Fantasy</Link></h1>
-        <MovieCard
-          movies={this.state.fantasyMovies}        
-        />
+          <h1 className="header"><Link className="title" to="/movies/genre/14">Fantasy</Link></h1>
+          <MovieCard
+            movies={this.state.fantasyMovies}        
+          />
         </div>        
       </div>
-  )}
+    )
+  }
 }
 
 export default MovieIndexPage;

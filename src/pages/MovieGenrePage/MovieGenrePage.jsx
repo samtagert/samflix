@@ -59,18 +59,19 @@ class MovieGenrePage extends Component {
           title={this.state.genre}
         />
         <div className="card-group">
-        <MovieCard
-          movies={this.state.movies1}
-        />
-        <MovieCard
-          movies={this.state.movies2}
-        />
-        <MovieCard
-          movies={this.state.movies3}
-        />
+          <MovieCard
+            movies={this.state.movies1}
+          />
+          <MovieCard
+            movies={this.state.movies2}
+          />
+          <MovieCard
+            movies={this.state.movies3}
+          />
         </div>
       </div>
-  )}
+    )
+  }
 }
 
 export default MovieGenrePage;
