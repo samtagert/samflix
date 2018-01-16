@@ -1,0 +1,15 @@
+.welcome {
+  height: 1000px;
+  background-image: url("http://visualparadox.com/images/no_linking_allowed/spotlight1600.jpg");
+  color: white;
+}
+
+.welcome-title {
+  font-size: 72px;
+  margin: 0;
+  padding: 20% 5% 0;
+}
+
+.welcome-info {
+  padding: 0 5%;
+}

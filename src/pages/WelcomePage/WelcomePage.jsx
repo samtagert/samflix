@@ -5,11 +5,10 @@ import './WelcomePage.css';
 const WelcomePage = () => {
   return (
     <div className='welcome'>
-      <h1>SAMFLIX</h1>
-      <h1>See what's next.</h1>
-      <h4>WATCH ANYWHERE. CANCEL ANYTIME.</h4>
-      <p><Link to='/signup'>First time using Samflix? Signup!</Link></p>
-      <p><Link to='/login'>Already a member? Login!</Link></p>
+      <h1 className="welcome-title">SAMFLIX</h1>
+      <h1 className="welcome-info">See what's next.</h1>
+      <p><Link className="nav-item welcome-info" to='/signup'>First time using Samflix? Sign up!</Link></p>
+      <p><Link className="nav-item welcome-info" to='/login'>Already a member? Log in!</Link></p>
     </div>
   )
 }

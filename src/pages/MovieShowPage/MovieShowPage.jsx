@@ -13,14 +13,12 @@ class MovieShowPage extends Component {
   }
 
   movie = () => {
-    console.log('ABOUT TO FETCH')
     fetch(`/api/movies/${this.props.match.params.id}`)
     .then(res => res.json())        
     .then(movie => this.setState({movie}))
   }
 
   componentDidMount() {
-    console.log('COMPONENT MOUNT')
     this.movie()
   }
   
