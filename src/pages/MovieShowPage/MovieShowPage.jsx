@@ -12,7 +12,18 @@ class MovieShowPage extends Component {
     };
   }
 
+  movie = () => {
+    fetch(`/api/movies/${this.props.match.params.id}`)
+    .then(res => res.json())        
+    .then(movie => this.setState({movie}))
+  }
+
+  componentDidMount() {
+    this.movie()
+  }
+  
   render(props) {
+    console.log(this.state.movie)
     return (
       <div>
         <NavBar
@@ -20,7 +31,9 @@ class MovieShowPage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron title={'banana'} />
+        <MovieJumbotron
+          title={this.state.movie.title}
+        />
         <h1>Movie Show</h1>
         <p><Link to='/movies'>Back to the index</Link></p>
       </div>

@@ -51,13 +51,36 @@ function fetchFantasy (req, res) {
   })
 }
 
+function fetchMovies1 (req, res) {
+  request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&with_genres=${req.params.id}`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies1 = tmbdBody.results;
+    res.json(movies1)
+  })
+}
+
+function fetchMovies2 (req, res) {
+  request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&page=2&with_genres=${req.params.id}`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies2 = tmbdBody.results;
+    res.json(movies2)
+  })
+}
+
+function fetchMovies3 (req, res) {
+  request(`https://api.themoviedb.org/3/discover/movie?api_key=${tmbdKey}&language=en-US&include_adult=false&page=3&with_genres=${req.params.id}`,function (error, tmbdResponse) {
+    var tmbdBody = JSON.parse(tmbdResponse.body)
+    var movies3 = tmbdBody.results;
+    res.json(movies3)
+  })
+}
+
 function fetchGenre (req, res) {
   request(`https://api.themoviedb.org/3/genre/movie/list?language=en-US&api_key=${tmbdKey}`,function (error, tmbdResponse) {
     var tmbdBody = JSON.parse(tmbdResponse.body)
     var genres = tmbdBody.genres;
-    // var genre = genres.find(id=req.id)
-    // console.log('FETCH GENRE RESULTS', genre)
-    res.json(genres)
+    var genre = genres.find(genre => genre.id === Number(req.params.id)).name
+    res.json(genre)
   })
 }
 
@@ -70,10 +93,11 @@ function fetchPopular (req, res) {
 }
 
 function fetchMovie (req, res) {
-  request(`https://api.themoviedb.org/3/movie/${req.id}?api_key=${tmbdKey}&language=en-US`,function (error, tmbdResponse) {
+  console.log('FETCH MOVIE HIT')
+  request(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${tmbdKey}&language=en-US`,function (error, tmbdResponse) {
     var tmbdBody = JSON.parse(tmbdResponse.body)
-    var movies = tmbdBody.results;
-    res.json(movies);
+    var movie = tmbdBody;
+    res.json(movie);
   })
 }
 
@@ -86,5 +110,8 @@ module.exports = {
   fetchFantasy,
   fetchGenre,
   fetchPopular,
-  fetchMovie
+  fetchMovie,
+  fetchMovies1,
+  fetchMovies2,
+  fetchMovies3
 }

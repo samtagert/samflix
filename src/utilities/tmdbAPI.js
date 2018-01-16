@@ -40,13 +40,6 @@ function fetchFantasy() {
   )
 }
 
-function fetchGenre() {
-  return (
-    fetch('/api/movies/genre')
-    .then(res => res.json())
-  )
-}
-
 function fetchPopular() {
   return (
     fetch('api/movies/popular')
@@ -61,6 +54,5 @@ export default {
   fetchComedy,
   fetchCrime,
   fetchFantasy,
-  fetchGenre,
   fetchPopular
 };
