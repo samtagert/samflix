@@ -15,6 +15,9 @@ import MovieGenrePage from '../MovieGenrePage/MovieGenrePage';
 import MovieShowPage from '../MovieShowPage/MovieShowPage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
+// import components
+import Footer from '../../components/Footer/Footer'
+
 // import utilities
 import userService from '../../utilities/userService';
 
@@ -91,6 +94,8 @@ class App extends Component {
                 />
               }/>              
             </Switch>
+            <Footer>
+            </Footer>
           </div>
         </Router>
       </div>
