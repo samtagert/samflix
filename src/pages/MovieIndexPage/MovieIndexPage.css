@@ -1,5 +1,5 @@
 .index-page {
-  width: 90%;
+  /* width: 90%; */
   margin: auto;
 }
 
@@ -9,7 +9,7 @@
 
 .header {
   text-align: left;
-  margin: 0 58px;
+  margin: 0 65px;
 }
 
 .title {

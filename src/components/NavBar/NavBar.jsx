@@ -8,18 +8,15 @@ const NavBar = (props) => {
   <Navbar>
     <Navbar.Header>
 			<Navbar.Brand>
-        <Link to='/movies'>SAMFLIX</Link>
+        <Link className="brand" to='/movies'>SAMFLIX</Link>
 			</Navbar.Brand>
 		</Navbar.Header>
     <Nav>
       <NavItem>
-        <Link to='/profile'>Welcome, {props.user.name}!</Link>
+        <Link className="nav-item" to='/profile'>Welcome, {props.user.name}!</Link>
       </NavItem>
       <NavItem>
-        <Link to='/movies'>Dropdown with genres</Link>
-      </NavItem>
-      <NavItem>
-        <Link to='' onClick={props.handleLogout}>Log Out</Link>
+        <Link className="nav-item" to='' onClick={props.handleLogout}>Log Out</Link>
       </NavItem>
     </Nav>
   </Navbar>
@@ -27,15 +24,15 @@ const NavBar = (props) => {
   <Navbar>
     <Navbar.Header>
 			<Navbar.Brand>
-        <Link to='/movies'>SAMFLIX</Link>
+        <Link className="brand" to='/movies'>SAMFLIX</Link>
 			</Navbar.Brand>
 		</Navbar.Header>
     <Nav>
       <NavItem>
-        <Link to='/login'>Log In</Link>      
+        <Link className="nav-item" to='/login'>Log In</Link>      
       </NavItem>
       <NavItem>
-        <Link to='signup'>Sign Up</Link>      
+        <Link className="nav-item" to='signup'>Sign Up</Link>      
       </NavItem>
     </Nav>
   </Navbar>;

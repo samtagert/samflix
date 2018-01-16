@@ -1,0 +1,28 @@
+.navbar {
+  margin: 0;
+  background-color: black;
+  border: 0px;
+  border-radius: 0px;
+}
+
+.brand {
+  color: #FFF;
+  transition: 500ms;  
+}
+
+.brand:hover {
+  font-size: 19px;
+  transition: 500ms;
+}
+
+.nav-item {
+  color: rgb(196, 196, 196);
+  transition: 500ms;  
+}
+
+.nav-item:hover {
+  color: #FFF;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 500ms;
+}

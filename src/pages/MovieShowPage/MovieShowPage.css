@@ -1,14 +1,18 @@
 .movie-info {
   color: rgb(196, 196, 196);
+  margin: 0 65px;
 }
 
 .movie-summary {
   color: rgb(196, 196, 196);
   font-size: 18px;
   width: 70%;
+  height: 600px;
+  margin: 0 64px;
 }
 
 .summary-header {
   color: rgb(196, 196, 196);
   font-size: 32px;
+  margin: 15px 64px 5px;
 }

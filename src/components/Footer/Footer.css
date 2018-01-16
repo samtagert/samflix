@@ -1,0 +1,21 @@
+.footer {
+  padding: 10px 0 0;
+  width: 100%;
+  height: 200px;
+  color: rgb(196, 196, 196);
+  background-color: black;
+  text-align: center;
+}
+
+.footer-link {
+  font-size: 14px;
+  color: rgb(196, 196, 196);
+  transition: 500ms;
+}
+
+.footer-link:hover {
+  color: #FFF;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 500ms;
+}

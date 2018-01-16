@@ -9,7 +9,7 @@ import './MovieJumbotron.css';
 const MovieJumbotron = (props) => (
   <div>
     <Jumbotron className="jumbo">
-      <h1>{props.title}</h1>
+      <h1 className="jumbo-title">{props.title}</h1>
     </Jumbotron>
   </div>
 )
