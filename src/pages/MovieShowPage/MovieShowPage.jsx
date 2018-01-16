@@ -13,17 +13,18 @@ class MovieShowPage extends Component {
   }
 
   movie = () => {
+    console.log('ABOUT TO FETCH')
     fetch(`/api/movies/${this.props.match.params.id}`)
     .then(res => res.json())        
     .then(movie => this.setState({movie}))
   }
 
   componentDidMount() {
+    console.log('COMPONENT MOUNT')
     this.movie()
   }
   
   render(props) {
-    console.log(this.state.movie)
     return (
       <div>
         <NavBar
@@ -31,11 +32,16 @@ class MovieShowPage extends Component {
           user={this.props.user}
           handleLogout={this.props.handleLogout}
         />
-        <MovieJumbotron
-          title={this.state.movie.title}
-        />
-        <h1>Movie Show</h1>
-        <p><Link to='/movies'>Back to the index</Link></p>
+        {this.state.movie ?
+        <div>
+          <MovieJumbotron
+            title={this.state.movie.title}
+          />
+          <p className="movie-info">Released: {this.state.movie.release_date} | Runtime: {this.state.movie.runtime} minutes | Average Rating: {this.state.movie.vote_average}/10</p>
+          <h2 className="summary-header">Summary:</h2>
+          <p className="movie-summary">{this.state.movie.overview}</p>
+        </div>
+        : <div></div>}
       </div>
   )}
 }
