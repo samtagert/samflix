@@ -1,5 +1,5 @@
 # Samflix
-Samflix is my take on a Netflix inspired movie database. I wanted to build an application that offered good React practice alongside experimenting with new CSS3 tricks and Bootstrap React.
+Samflix is my take on a Netflix inspired movie database. I wanted to build an application that offered good React practice alongside experimenting with new CSS3 tricks.
 
 ![Samflix](https://i.imgur.com/fZSwtJn.png)
 
